@@ -1,0 +1,53 @@
+#barra_color {
+    height: 1px;
+    border: none;
+    color: black;
+    background-color: black;
+}
+
+
+legend {
+    float: initial;
+    margin-bottom: .5rem;
+    line-height: normal;
+    width: auto;
+    margin-left: 20px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.paddings {
+    padding: 0px;
+    font-size: 12px;
+}   
+
+.cajatexto {
+    font-size: 12px;
+    margin-bottom: 3px;
+    text-align: end;
+}
+
+.textocards {
+    font-size: 15;
+    font-weight: bold;
+}
+
+.textofinal {
+    text-align: start;
+}
+
+.btnBus {
+    height: 39px;
+}
+
+.card_coontenido {
+    padding: 20px;
+}
+
+.input_cliente::placeholder {
+    background-image: url(img/search_icon.png);
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    background-position: .5rem center;
+    text-align: center;
+}

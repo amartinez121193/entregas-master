@@ -1,0 +1,270 @@
+.header {
+    padding: 10px;
+}
+
+.content_text {
+    padding: 15px;
+    padding-bottom: 0px;
+}
+
+#barra_color {
+    height: 1px;
+    border: none;
+    color: #333;
+    background-color: #333;
+}
+
+.card-header {
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.colcard {
+    padding-left: 20px;
+}
+
+.nopaddigns {
+    padding: 0px
+}
+
+.text_list {
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.itemlist {
+    border-top: 1px solid black;
+}
+
+legend {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    margin-bottom: .5rem;
+    font-size: 1.5rem;
+    line-height: inherit;
+    color: inherit;
+    white-space: normal;
+    margin-left: 31px;
+    padding: 5px;
+}
+
+.fecha_entrega {
+    margin-right: 5px;
+}
+
+.fecha_final {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.text_header {
+    text-align: center;
+}
+
+.contenedor_pedido {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#card_principal {
+    padding: 0px;
+    margin: 10px;
+}
+
+#text_card_header {
+    font-size: 13px;
+    text-align: start;
+    margin: 0px;
+    padding: 5px;
+}
+
+#legend_unidades {
+    font-size: 14px;
+    margin: 12px;
+}
+
+.content_shadow {
+    /*background-image: url(../imagenes/sitio_base/bg_shadow_b.jpg);
+background-repeat: repeat-y;*/
+    margin: auto;
+    padding: 0px;
+    clear: both;
+    /*width: 1300px;*/
+    overflow: auto;
+    /*overflow: auto;*/
+}
+
+.content {
+    background-color: #fff;
+    /*width: 960px;*/
+    /*width: 1252px;*/
+    margin: auto;
+    overflow: hidden;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 60px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    -webkit-box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.56);
+    -moz-box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.56);
+    box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.56);
+}
+
+.list-group::-webkit-scrollbar {
+    width: 5px;
+}
+
+.list-group::-webkit-scrollbar-thumb {
+    background-color: #6b6e70;
+    border-radius: 10px;
+}
+
+.list-group::-webkit-scrollbar- {
+    background-color: #6b6e70;
+    border-radius: 10px;
+}
+
+.content .bullets li p a {
+    color: #006fae;
+    text-decoration: none;
+    line-height: 25px;
+}
+
+.content .bullets li p a:hover {
+    text-decoration: underline;
+}
+
+.rowform {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#Formulario {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.headerTabs {
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.tabs {
+    border: 1px solid black;
+    padding-right: 5px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+}
+
+.text_start {
+    text-align: start;
+}
+
+.lista_group {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    border-bottom: 1px solid black;
+}
+
+.tabla_transporte {
+    margin-top: 10px;
+    margin-left: 0px;
+    border: 1px solid black;
+}
+
+#Header_tabs_dinamica {
+    border-bottom: 0.5px solid black;
+    margin-left: 0px;
+}
+
+span {
+    font-size: 19px;
+    color: black;
+    padding: 10px;
+}
+
+#capacidad {
+    border-left: 0.5px solid black;
+    border-right: 0.5px solid black;
+    padding: 0px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#icon_info {
+    font-size: 20px;
+    margin: auto;
+    padding: 5px;
+}
+
+#destino {
+    padding: 0px;
+    text-align: center;
+    padding-top: 25px;
+    font-weight: bold;
+}
+
+.text_size {
+    font-size: 15px;
+}
+.text_size_tabla {
+    font-size: 14px;
+}
+
+#googleIcon {
+    border-left: 0.5px solid black;
+    padding: 0px;
+}
+
+.card {
+    margin-left: 10px;
+}
+
+.itms {
+    border-top: none;
+    margin-bottom: 0px;
+    padding: 0px;
+    border-bottom: 1px solid black;
+}
+
+.tabsPedido {
+    border-right: 1px solid black;
+}
+
+.borderleft {
+    border-left: 1px solid black;
+}
+
+.x {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+#pedidos_header {
+    padding: 10px;
+    text-align: center;
+    border: 0.5px solid black;
+    font-size: 20px;
+}
+
+.pedido_items {
+    border: 1px solid black;
+    border-top: none;
+    margin-bottom: 0px;
+    margin-right: 4px;
+}
+
+.tabla{
+    height: 300px;
+    max-height: 300px;
+    overflow-y: auto; 
+    padding-right: 0px;
+}

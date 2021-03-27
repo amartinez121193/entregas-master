@@ -1,0 +1,511 @@
+<script language="javascript" src="jquery-1.9.1.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{$rooturl}/css/flexboxgrid.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+
+
+
+<body>
+    <div class="content_shadow">
+        <div class="content">
+            <div class="content-sistema">
+                <!-- div que contiene el header--->
+                <div id="header_pag" class="row header">
+                    <div class="col-12  content_text ">
+                        <h1>RESULTADOS DE PROGRAMADOR DE ENTREGAS </h1>
+                        <hr id="barra_color">
+                    </div>
+                </div>
+                <!--Contenido de La Pagina -->
+                <div id="card_principal" class="card col-12 col-md-8">
+                    <!--header pestaña-->
+                    <div class="card-header col-md-12">
+                        <div class="row justify-content-between">
+                            <div class="col-11 col-md-auto align-self-center">
+                                <p id="text_card_header"> Agregar Unidades y Pedidos </p>
+                            </div>
+                            <div class="col-1 d-none d-md-block col-md-auto p-0">
+                                <href onclick="btn_expand()" class="btn btn-light btn-lg "><i class="fas fa-chevron-up"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!--fin header pestaña-->
+                    <div id="cards_unidades_disponibles" class="card-body row">
+                        <!--Card Unidades Disponibles-->
+                        <div class="col-12 col-sm-4">
+                            <fieldset class="row" style="border: 1px solid black">
+                                <legend id="legend_unidades">UNIDADES DISPONIBLES</legend>
+                                <div  id="unidades_disponibles" class=" list-group col-12 tabla p-0 " >
+
+                                    <div class="list-group-item ">
+                                        <div class="row">
+                                            <div class="col-9  ">
+                                                <div class="row">
+                                                    <div class="col-12 text_list"> NOMBRE DE UNIDAD</div>
+                                                    <div class="col-12  text_list"> Capacidad de Carga : x KG </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 align-self-center ">
+                                                <button type="button" class="btn btn-block btn-light"><i class="fas fa-plus"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </fieldset>
+                        </div>
+                        <div class="col-12 col-sm-8">
+                            <div class="row rowform">
+                                <div id="Formulario" class="col-12">
+                                    <form action="">
+                                        <div class="form-group row">
+                                            <div class="col-md-7">
+                                                <div class="row justify-content-center">
+                                                    <label for="fecha_entrega" class="col-6 col-form-label  text-start">Fecha de Entregas de </label>
+                                                    <div class="col-6">
+                                                        <input type="date" class="form-control" id="fecha_entregas">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="row justify-content-start">
+                                                    <label for="fecha_final" class="col-2 col-form-label  text-center">a</label>
+                                                    <div class="col-10">
+                                                        <input type="date" class="form-control" id="fecha_final">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-md-7">
+                                                <div class="row justify-content-center">
+                                                    <label for="id_pedido" class="col-6 col-form-label text-start"> ID Pedido </label>
+                                                    <div class="col-6">
+                                                        <input type="text" class="form-control form-text" id="id_pedido">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class=" col-auto align-self-center">
+                                                <button type="button" class="btn btn-block btn-primary">Buscar</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="row rowform ">
+                                <div class="col-12 headerTabs  text-center">
+                                    <h4>RESULTADO DE BUSQUEDA</h4>
+                                </div>
+                            </div>
+                            <div class="row rowform">
+                                <div class="col-12 tabs  text-center">
+                                    <div  id="tabla_busqueda" class=" list-group col-12 tabla p-0 " >
+
+                                        <div class="list-group-item list-group-item-action  lista_group" aria-current="true">
+                                            <div class="row ">
+                                                <div class="col-9 " style="border-right:1px solid black ;">
+                                                    <div class="row justify-content-between">
+                                                        <div class="col-5 text_list text_start text_size">PEDIDO</div>
+                                                        <div class="col-7 text_list text_start text_size"> NOMBRE DE CLIENTE </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 text_list text_start text_size">CLAVE /NOMBRE DEL PRODUCTO</div>
+                                                        <div class="col-7">
+                                                            <div class="row justify-content-end">
+                                                                <div class="col-12  text_list text_start text_size"> CANTIDAD SOLICITADA </div>
+                                                                <div class="col-12 text_list text_start text_size">EXISTENCIA</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3 align-self-center ">
+                                                    <div class="  text_list" style="text-align: center;">PESO TOTAL EN KG </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+            <!--Tablas Dinamicas-->
+            <div class="shared-list row">
+                <div class="col-12 col-md-7">
+                    <div class="card row">
+                        <div class="col-12">
+                            <div class="list-group tabla_transporte">
+                                <div id="Header_tabs_dinamica">
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-4  col-sm-7 p-0 ">
+                                                <div style="height: 65px" class="progress">
+                                                    <div class=" progress-bar bg-success" role="progressbar" style="width: 10%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                        <span><b>NOMBRE DE UNIDAD DE TRANSPORTE</b></span></div>
+                                                </div>
+                                            </div>
+                                            <div id="capacidad" class="col-3  col-sm-2  text_size">
+                                                <div class="row">
+                                                    <div class="col-12">CAPACIDAD DE CARGA: X KG </div>
+                                                    <div id="icon_info" class="col-12"> <i class="fas fa-info-circle"></i> </div>
+                                                </div>
+                                            </div>
+                                            <div id="destino" class="col-3 col-sm-2 text_size">
+                                                <p> NO.DESTINOS </p>
+                                            </div>
+                                            <div id="googleIcon" class="col-1">
+                                                <img src="img/google_maps_icon.png" width="100%" height="60px" style="padding-top: 10px;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="height: 300px; max-height: 300px; overflow-y: auto; padding-right: 0px;" class="col-sm-12 list-group unidades-transporte" id="example2-right1">
+                                    <div class="list-group-item itms">
+                                        <div class=" col-12">
+                                            <div class="row">
+                                                <div class="col-5 col-md-5 tabsPedido">
+                                                    <div class="row justify-content-start pt-2">
+                                                        <div class="col-sm-5 col-lg-4 text_list text_size pr-0">PEDIDO</div>
+                                                        <div class="col-sm-7 col-lg-8 text_list text_size"> NOMBRE DE CLIENTE </div>
+                                                    </div>
+                                                    <div class="row justify-content-start">
+                                                        <div class="col-12  text_list text_size pr-0">CLAVE /NOMBRE DEL PRODUCTO</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-2 col-md-2 p-1 pt-2">
+                                                    <input class="form-control " type="number" placeholder="Cantidad" id="cantidad">
+                                                </div>
+                                                <div class="col-2  col-md-2 borderleft p-2 pt-3 text_size text-center">
+                                                    <div style="font-weight: bold;;">PESO TOTAL KG</div>
+                                                </div>
+                                                <div class="col-2 col-md-2 col-lg-1 borderleft tabsPedido p-0">
+                                                    <button type="button " class="btn btn-block btn-light w-100 h-100"> <i class="fas fa-times x" ></i> </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mt-1">
+                            <div class="row justify-content-end">
+                                <div class="col-auto ">
+                                    <button type="button" class="btn btn-sm btn-secondary">Imprimir Movimientos</button>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn  btn-sm  btn-secondary">ARMAR BITACORA DE RUTA</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-5 mt-3">
+                    <div class="card">
+                        <div class="card-header p-0">
+                            <div id="pedidos_header" class="col-12 ">
+                                PEDIDOS / PRODUCTOS NO PROGRAMADOS
+                            </div>
+                        </div>
+                        <div class="card-body p-0">
+                            <div style="height: 400px; max-height: 400px; overflow-y:auto; " class="col-sm-12 list-group unidades-transporte p-0 " id="example2-right4">
+                                <div class="list-group-item pedido_items pt-0 pb-0 pl-1 pr-1" id_pedido="x">
+                                    <div class="row mr-1 ml-1">
+                                        <div class="col-9 " style="border-right:1px solid black ;">
+                                            <div class="row justify-content-between pt-1">
+                                                <div class="col-sm-5 col-lg-4 text_list text_start text_size">PEDIDO</div>
+                                                <div class="col-sm-7 col-lg-8 text_list text_start text_size"> NOMBRE DE CLIENTE </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12 col-lg-6 text_list text_start text_size">CLAVE /NOMBRE DEL PRODUCTO</div>
+                                                <div class="col-12 col-lg-6">
+                                                    <div class="row justify-content-end">
+                                                        <div class="col-12  text_list text_start text_size"> CANTIDAD SOLICITADA </div>
+                                                        <div class="col-12 text_list text_start text_size">EXISTENCIA</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 align-self-center text_size">
+                                            <div class=" text_list" style="text-align: center;">PESO TOTAL EN KG </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    </div>
+    </div>
+</body>
+
+
+
+<!-- Latest Sortable -->
+<script src="sortable/Sortable.js"></script>
+
+<script type="text/javascript" src="sortable/st/prettify/prettify.js"></script>
+<script type="text/javascript" src="sortable/st/prettify/run_prettify.js"></script>
+
+
+<script type="text/javascript">
+    //Creacion de los objectos
+    let objetos = creador_objetos(5);
+    //console.log(objetos);
+    let clave = Object.keys(objetos);
+
+
+    function btn_expand(){
+    let btnexpand = document.getElementById('card_principal');
+        btnexpand.classList.toggle('col-md-8');
+        btnexpand.classList.toggle('col-md-12');
+    }
+
+    unidades_disponibles();
+    resultados_busqueda();
+    tabla_Trasporte();
+    pedidos();
+
+
+
+    function unidades_disponibles() {
+        for (i = 0; i < clave.length; i++) {
+            $('#unidades_disponibles').append('<div class="list-group-item text_size ">' +
+                '<div class="row">' +
+                '<div class="col-9  ">' +
+                '<div class="row">' +
+                '<div class="col-12 text_list">' + objetos[i]["nombre_unidad"] + '</div>' +
+                '<div class="col-12  text_list"> Capacidad de Carga : ' + objetos[i]["capacidad"] + ' KG </div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="col-3 col-lg-auto align-self-center ">' +
+                '<button type="button" class="btn btn-block btn-light"><i class="fas fa-plus"></i></button>' +
+                '</div>' +
+                '</div>' +
+                ' </div>');
+        }
+    }
+
+    function resultados_busqueda() {
+        for (i = 0; i < clave.length; i++) {
+            $('#tabla_busqueda').append(' <div class="list-group-item list-group-item-action  lista_group" aria-current="true">' +
+                '<div class="row ">' +
+                '<div class="col-9 " style="border-right:1px solid black ;">' +
+                '<div class="row justify-content-between">' +
+                '<div class="col-5 text_list text_start text_size">' + objetos[i]["pedido"] + '</div>' +
+                '<div class="col-7 text_list text_start text_size"> ' + objetos[i]["nombre"] + '</div>' +
+                ' </div>' +
+                '<div class="row">' +
+                '<div class="col-5 text_list text_start text_size">' + objetos[i]["producto"] + '</div>' +
+                '<div class="col-7">' +
+                '<div class="row justify-content-end">' +
+                '<div class="col-12  text_list text_start text_size"> CANTIDAD SOLICITADA: ' + objetos[i]["cantidad"] + '</div>' +
+                '<div class="col-12 text_list text_start text_size">EXISTENCIA: ' + objetos[i]["existencia"] + '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="col-3 align-self-center text_size ">' +
+                '<div class="  text_list" style="text-align: center;">PESO TOTAL EN ' + objetos[i]["existencia"] + ' KG </div>' +
+                '</div>' +
+                '</div>' +
+                '</div>');
+        }
+    }
+
+    function tabla_Trasporte() {
+        for (i = 0; i < clave.length; i++) {
+            $('#example2-right1').append(' <div class="list-group-item itms" id="' + objetos[i]["id"] + '"  ">' +
+                '<div class=" col-12">' +
+                '<div class="row">' +
+                '<div class="col-5 col-md-5 tabsPedido">' +
+                '<div class="row justify-content-start pt-2">' +
+                '<div class="col-sm-5 col-lg-5 text_list text_size_tabla pr-0">' + objetos[i]["pedido"] + '</div>' +
+                '<div class="col-sm-7 col-lg-7 text_list text_size_tabla">' + objetos[i]["nombre"] + ' </div>' +
+                '</div>' +
+                '<div class="row justify-content-start">' +
+                '<div class="col-12  text_list text_size_tabla pr-0">' + objetos[i]["clave"] + '/  ' + objetos[i]["producto"] + '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="col-2 col-md-2 p-1 pt-2">' +
+                '<input class="form-control " type="number" placeholder="Cantidad" id="cantidad">' +
+                '</div>' +
+                '<div class="col-2  col-md-2 borderleft p-2 pt-3 text_size_tabla text-center">' +
+                '<div style="font-weight: bold;;">PESO TOTAL ' + objetos[i]["capacidad"] + ' KG</div>' +
+                '</div>' +
+                '<div class="col-2 col-md-2 col-lg-1 borderleft tabsPedido p-0">' +
+                '<button type="button  onclick=" " class="btn btn-block btn-light w-100 h-100 delete" > <i class="fas fa-times x" ></i> </button>' +
+                ' </div>' +
+                '</div>' +
+                ' </div>' +
+                '</div>');
+        }
+    }
+
+    function pedidos() {
+        for (i = 0; i < clave.length; i++) {
+            $('#example2-right4').append(' <div class="list-group-item pedido_items pt-0 pb-0 pl-1 pr-1" id="' + objetos[i]["id"] + '">' +
+                '<div class="row mr-1 ml-1">' +
+                '<div class="col-9 " style="border-right:1px solid black ;">' +
+                '<div class="row justify-content-between pt-1">' +
+                '<div class="col-sm-5 col-lg-5 text_list text_start text_size_tabla">' + objetos[i]["pedido"] + '</div>' +
+                '<div class="col-sm-7 col-lg-7 text_list text_start text_size_tabla">' + objetos[i]["nombre"] + '</div>' +
+                '</div>' +
+                '<div class="row">' +
+                '<div class="col-12 col-lg-5 text_list text_start text_size_tabla"> ' + objetos[i]["clave"] + '/  ' + objetos[i]["producto"] + ' </div>' +
+                '<div class="col-12 col-lg-7">' +
+                '<div class="row justify-content-end">' +
+                '<div class="col-12  text_list text_start text_size_tabla"> CANTIDAD SOLICITADA: ' + objetos[i]["cantidad"] + ' </div>' +
+                '<div class="col-12 text_list text_start text_size"_tabla>EXISTENCIA ' + objetos[i]["existencia"] + '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="col-3 align-self-center text_size">' +
+                '<div class=" text_list" style="text-align: center;">PESO TOTAL EN ' + objetos[i]["capacidad"] + ' KG </div>' +
+                '</div>' +
+                '</div>' +
+                '</div>');
+        }
+    }
+
+    function creador_objetos(number) {
+        const Objetos = [];
+
+        for (i = 0; i < number; i++) {
+            Objetos[i] = {
+                id: Math.floor(Math.random() * (10000 - 100)),
+                nombre_unidad: "Unidad " + (i + 1),
+                capacidad: 27 + i,
+                pedido: Math.floor(Math.random() * (10000 - 100)),
+                clave: Math.floor(Math.random() * (100000 - 1000)),
+                nombre: nombre(),
+                producto: producto(),
+                cantidad: Math.floor(Math.random() * (50 - 1)),
+                existencia: Math.floor(Math.random() * (20 - 1)),
+
+            };
+        }
+        return Objetos;
+    }
+
+    function nombre() {
+        let nombres = ["Juan", "Luis", "Angel", "Alex", "Robert", "Donaldo", "JulionAlvarez", "RafaMarquez", "Andres Manuel", "Jorge", "Miguel"]
+        let ramdom_n = Math.floor(Math.random() * (nombres.length - 1));
+        return nombres[ramdom_n];
+    }
+
+    function producto() {
+        let productos = ["Marías", "Emperador", "Saladitas", "Chokis", "CRACKETS", "Mamut", "HotCakes", "Vualá", "Surtido Rico", "Cremax de Nieve", "arcoíris", "Galletas de Avena", "Canapé", "Chocolatines", "Consen", "Rulecitos", "Piruetas", "Merengue Arcoiris", "Maravillas"];
+        let ramdom_n = Math.floor(Math.random() * (productos.length - 1));
+        return productos[ramdom_n];
+    }
+
+    //delete
+    $(document).on("click", ".delete", function(){
+            $(this).parent().parent().parent().parent().remove();
+    });
+
+
+
+
+    //console.log($('.unidades-transporte'));
+    $(".unidades-transporte").each(function(i, table) {
+        //alert();
+        new Sortable(table, {
+            group: 'shared', // set both lists to same group
+            animation: 150,
+            onAdd: function(evt) {
+                let destino = evt.to["id"];
+                console.log(destino)
+                let id = evt.item["id"]
+                let busqueda = objetos.findIndex((objeto, indice, objetos) => {
+                    return objeto.id == id;
+                });
+                if (destino === "example2-right1") {
+                    html = $('<div class="list-group-item itms" id="' + objetos[busqueda]["id"] + '">' +
+                        '<div class=" col-12">' +
+                        '<div class="row">' +
+                        '<div class="col-5 col-md-5 tabsPedido">' +
+                        '<div class="row justify-content-start pt-2">' +
+                        '<div class="col-sm-5 col-lg-5 text_list text_size pr-0">' + objetos[busqueda]["pedido"] + '</div>' +
+                        '<div class="col-sm-7 col-lg-7 text_list text_size">' + objetos[busqueda]["nombre"] + ' </div>' +
+                        '</div>' +
+                        '<div class="row justify-content-start">' +
+                        '<div class="col-12  text_list text_size pr-0">' + objetos[busqueda]["clave"] + '/  ' + objetos[i]["producto"] + '</div>' +
+                        '</div>' +
+                        '</div>' +
+                        '<div class="col-2 col-md-2 p-1 pt-2">' +
+                        '<input class="form-control " type="number" placeholder="Cantidad" id="cantidad">' +
+                        '</div>' +
+                        '<div class="col-2  col-md-2 borderleft p-2 pt-3 text_size text-center">' +
+                        '<div style="font-weight: bold;;">PESO TOTAL' + objetos[busqueda]["capacidad"] + ' KG</div>' +
+                        '</div>' +
+                        '<div class="col-2 col-md-2 col-lg-1 borderleft tabsPedido p-0">' +
+                        '<button type="button " class="btn btn-block btn-light w-100 h-100 delete"> <i class="fas fa-times x" ></i> </button>' +
+                        ' </div>' +
+                        '</div>' +
+                        ' </div>' +
+                        '</div>');
+                    $(evt.item).replaceWith(html);
+                }
+                if (destino == "example2-right4") {
+                    html = $('<div class="list-group-item pedido_items pt-0 pb-0 pl-1 pr-1" id="' + objetos[busqueda]["id"] + '">' +
+                        '<div class="row mr-1 ml-1">' +
+                        '<div class="col-9 " style="border-right:1px solid black ;">' +
+                        '<div class="row justify-content-between pt-1">' +
+                        '<div class="col-sm-5 col-lg-5 text_list text_start text_size">' + objetos[busqueda]["pedido"] + '</div>' +
+                        '<div class="col-sm-7 col-lg-7 text_list text_start text_size">' + objetos[busqueda]["nombre"] + '</div>' +
+                        '</div>' +
+                        '<div class="row">' +
+                        '<div class="col-12 col-lg-5 text_list text_start text_size"> ' + objetos[busqueda]["clave"] + '/  ' + objetos[busqueda]["producto"] + ' </div>' +
+                        '<div class="col-12 col-lg-7">' +
+                        '<div class="row justify-content-end">' +
+                        '<div class="col-12  text_list text_start text_size"> CANTIDAD SOLICITADA: ' + objetos[busqueda]["cantidad"] + ' </div>' +
+                        '<div class="col-12 text_list text_start text_size">EXISTENCIA' + objetos[busqueda]["existencia"] + '</div>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>' +
+                        '<div class="col-3 align-self-center text_size">' +
+                        '<div class=" text_list" style="text-align: center;">PESO TOTAL EN ' + objetos[i]["capacidad"] + ' KG </div>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>');
+                    $(evt.item).replaceWith(html);
+                }
+
+
+                //html = $('<div class="list-group-item"><i class="fas fa-arrows-alt handle"></i>&nbsp;&nbsp;Prueba</div>');
+                //$(evt.item).replaceWith(html);
+                //evt.item.replaceWith(html)
+                //$(".unidades-transporte").append(html);
+            },
+            
+        });
+    });
+</script>
+
+</html>
